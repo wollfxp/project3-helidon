@@ -31,6 +31,12 @@
                 <artifactId>javax.activation-api</artifactId>
                 <version>1.2.0</version>
             </dependency>
+            <dependency>
+                <groupId>org.jboss</groupId>
+                <artifactId>jandex</artifactId>
+                <scope>runtime</scope>
+                <optional>true</optional>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -115,6 +121,15 @@
                 <executions>
                     <execution>
                         <id>copy-libs</id>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.jboss.jandex</groupId>
+                <artifactId>jandex-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>make-index</id>
                     </execution>
                 </executions>
             </plugin>
